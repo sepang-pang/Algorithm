@@ -3,9 +3,9 @@ class Solution {
         int maxCount = 0;
         int currCount = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            currCount = (nums[i] == 1) ? currCount + 1 : 0;
-            
+        for (int num : nums) { 
+            currCount = (num == 1) ? currCount + 1 : 0;
+
             if (maxCount < currCount) {
                 maxCount = currCount;
             }
@@ -14,6 +14,27 @@ class Solution {
         return maxCount;
     }
 }
+
+/*    
+    Try 1.
+    class Solution {
+        public int findMaxConsecutiveOnes(int[] nums) {
+            int maxCount = 0;
+            int currCount = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                currCount = (nums[i] == 1) ? currCount + 1 : 0;
+
+                if (maxCount < currCount) {
+                    maxCount = currCount;
+                }
+            }
+
+            return maxCount;
+        }
+    }
+*/
+
 
 /*
     1. 0 과 1 중 연속된 횟수가 더 많은 요소의 연속된 횟수를 반환하는 것인 줄 알았다.
