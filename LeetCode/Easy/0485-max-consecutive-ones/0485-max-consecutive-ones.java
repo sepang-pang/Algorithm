@@ -3,20 +3,41 @@ class Solution {
         int maxCount = 0;
         int currCount = 0;
 
-        for (int num : nums) { 
-            currCount = (num == 1) ? currCount + 1 : 0;
-
-            if (maxCount < currCount) {
-                maxCount = currCount;
-            }
+         for (int num : nums) {
+            maxCount = Math.max(maxCount, currCount = (num == 1) ? currCount + 1 : 0);
         }
-
+        
         return maxCount;
     }
 }
 
-/*    
+/*
+    Try 2.
+    Runtime : 3 ms
+    Memory : 50.39 nmb
+    
+    class Solution {
+        public int findMaxConsecutiveOnes(int[] nums) {
+            int maxCount = 0;
+            int currCount = 0;
+
+            for (int num : nums) {
+                currCount = (num == 1) ? currCount + 1 : 0;
+
+                if (maxCount < currCount) {
+                    maxCount = currCount;
+                }
+            }
+
+            return maxCount;
+        }
+    }
+*/
+/*
     Try 1.
+    Runtime : 2 ms
+    Memory : 49.95 mb
+    
     class Solution {
         public int findMaxConsecutiveOnes(int[] nums) {
             int maxCount = 0;
@@ -34,7 +55,6 @@ class Solution {
         }
     }
 */
-
 
 /*
     1. 0 과 1 중 연속된 횟수가 더 많은 요소의 연속된 횟수를 반환하는 것인 줄 알았다.
@@ -67,5 +87,5 @@ class Solution {
 
         return maxCount;
     }
-    
+
 */
